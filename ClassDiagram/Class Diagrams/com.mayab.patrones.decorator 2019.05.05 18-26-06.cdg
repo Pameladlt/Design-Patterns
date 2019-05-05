@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="com.mayab.patrones.decorator">
+  <ClassDiagramComponents>
+    <Class name="Angus" package="com.mayab.patrones.decorator" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cost" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Bacon" package="com.mayab.patrones.decorator" visibility="public" xPosition="107.0" yPosition="376.0">
+      <Fields>
+        <Field name="burger" type="Burger" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Burger" name="burger"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="cost" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Burger" package="com.mayab.patrones.decorator" visibility="public" isAbstract="true" xPosition="315.0" yPosition="22.0">
+      <Fields>
+        <Field name="description" type="String" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="cost" returnType="double" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Decorator" package="com.mayab.patrones.decorator" visibility="public" isAbstract="true" xPosition="504.0" yPosition="434.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getDescription" returnType="String" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="DecoratorController" package="com.mayab.patrones.decorator" visibility="public" xPosition="265.0" yPosition="655.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Guacamole" package="com.mayab.patrones.decorator" visibility="public" xPosition="783.0" yPosition="217.0">
+      <Fields>
+        <Field name="burger" type="Burger" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Burger" name="burger"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="cost" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Veggie" package="com.mayab.patrones.decorator" visibility="public" xPosition="706.0" yPosition="22.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cost" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="com.mayab.patrones.decorator.Guacamole" target="com.mayab.patrones.decorator.Decorator"/>
+    <HasRelation name="burger" source="com.mayab.patrones.decorator.Guacamole" target="com.mayab.patrones.decorator.Burger" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="burger" source="com.mayab.patrones.decorator.Bacon" target="com.mayab.patrones.decorator.Burger" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="com.mayab.patrones.decorator.Bacon" target="com.mayab.patrones.decorator.Decorator"/>
+    <IsRelation name="is" source="com.mayab.patrones.decorator.Angus" target="com.mayab.patrones.decorator.Burger"/>
+    <IsRelation name="is" source="com.mayab.patrones.decorator.Veggie" target="com.mayab.patrones.decorator.Burger"/>
+    <IsRelation name="is" source="com.mayab.patrones.decorator.Decorator" target="com.mayab.patrones.decorator.Burger"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

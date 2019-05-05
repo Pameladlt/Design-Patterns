@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="com.mayab.patrones.observer">
+  <ClassDiagramComponents>
+    <Class name="ObserverController" package="com.mayab.patrones.observer" visibility="public" xPosition="738.0" yPosition="116.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pasajero" package="com.mayab.patrones.observer" visibility="public" xPosition="138.0" yPosition="486.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="public"/>
+        <Field name="vuelo" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="vuelo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getVuelo" returnType="String" visibility="public"/>
+        <Method name="setVuelo" returnType="void" visibility="public">
+          <Argument type="String" name="vuelo"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="sala"/>
+          <Argument type="String" name="salida"/>
+          <Argument type="String" name="estado"/>
+        </Method>
+        <Method name="alert" returnType="void" visibility="public">
+          <Argument type="String" name="sala"/>
+          <Argument type="String" name="salida"/>
+          <Argument type="String" name="estado"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Vuelo" package="com.mayab.patrones.observer" visibility="public" xPosition="738.0" yPosition="264.0">
+      <Fields>
+        <Field name="sala" type="String" visibility="public"/>
+        <Field name="salida" type="String" visibility="public"/>
+        <Field name="destino" type="String" visibility="public"/>
+        <Field name="estado" type="String" visibility="public"/>
+        <Field name="pasajero" type="Pasajero[]" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="sala"/>
+          <Argument type="String" name="salida"/>
+          <Argument type="String" name="destino"/>
+          <Argument type="String" name="estado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSala" returnType="String" visibility="public"/>
+        <Method name="setSala" returnType="void" visibility="public">
+          <Argument type="String" name="sala"/>
+        </Method>
+        <Method name="getSalida" returnType="String" visibility="public"/>
+        <Method name="setSalida" returnType="void" visibility="public">
+          <Argument type="String" name="salida"/>
+        </Method>
+        <Method name="getDestino" returnType="String" visibility="public"/>
+        <Method name="setDestino" returnType="void" visibility="public">
+          <Argument type="String" name="destino"/>
+        </Method>
+        <Method name="getEstado" returnType="String" visibility="public"/>
+        <Method name="setEstado" returnType="void" visibility="public">
+          <Argument type="String" name="estado"/>
+        </Method>
+        <Method name="getPasajero" returnType="Pasajero[]" visibility="public"/>
+        <Method name="setPasajero" returnType="void" visibility="public">
+          <Argument type="Pasajero[]" name="pasajero"/>
+        </Method>
+        <Method name="notifyO" returnType="void" visibility="public"/>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="Pasajero" name="pasajero"/>
+        </Method>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="Pasajero" name="pasajeron"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Observable" package="com.mayab.patrones.observer" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Methods>
+        <Method name="getEstado" returnType="String" visibility="public"/>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="Pasajero" name="pasajero"/>
+        </Method>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="Pasajero" name="pasajero"/>
+        </Method>
+        <Method name="notifyO" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Observer" package="com.mayab.patrones.observer" visibility="public" xPosition="271.0" yPosition="336.0">
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="sala"/>
+          <Argument type="String" name="salida"/>
+          <Argument type="String" name="estado"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mayab.patrones.observer.Vuelo" target="com.mayab.patrones.observer.Observable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mayab.patrones.observer.Pasajero" target="com.mayab.patrones.observer.Observer"/>
+    <UseRelation source="com.mayab.patrones.observer.Observable" target="com.mayab.patrones.observer.Pasajero" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mayab.patrones.observer.Vuelo" target="com.mayab.patrones.observer.Pasajero" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

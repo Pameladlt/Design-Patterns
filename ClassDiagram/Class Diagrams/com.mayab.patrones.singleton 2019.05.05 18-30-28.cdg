@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="com.mayab.patrones.singleton">
+  <ClassDiagramComponents>
+    <Class name="Singleton" package="com.mayab.patrones.singleton" visibility="public" xPosition="63.0" yPosition="124.0">
+      <Fields>
+        <Field name="instance" type="Singleton" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="Singleton" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="User" package="com.mayab.patrones.singleton" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="logged" type="boolean" visibility="public" isStatic="true"/>
+        <Field name="Nombre" type="String" visibility="public" isStatic="true"/>
+        <Field name="Apellido" type="String" visibility="public" isStatic="true"/>
+        <Field name="instance" type="User" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Nombre"/>
+          <Argument type="String" name="Apellido"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="User" visibility="public" isStatic="true"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="Nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="Apellido"/>
+        </Method>
+        <Method name="DoLogin" returnType="boolean" visibility="public"/>
+        <Method name="Logout" returnType="boolean" visibility="public"/>
+        <Method name="setLogged" returnType="void" visibility="public">
+          <Argument type="boolean" name="log"/>
+        </Method>
+        <Method name="isLogged" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="UserController" package="com.mayab.patrones.singleton" visibility="public" xPosition="625.0" yPosition="143.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="com.mayab.patrones.singleton.Singleton" target="com.mayab.patrones.singleton.Singleton" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instance" source="com.mayab.patrones.singleton.User" target="com.mayab.patrones.singleton.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mayab.patrones.singleton.User" target="com.mayab.patrones.singleton.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instance" source="com.mayab.patrones.singleton.Singleton" target="com.mayab.patrones.singleton.Singleton" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

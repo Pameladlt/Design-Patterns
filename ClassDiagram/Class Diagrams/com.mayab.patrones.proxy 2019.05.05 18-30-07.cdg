@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="com.mayab.patrones.proxy">
+  <ClassDiagramComponents>
+    <Class name="FileController" package="com.mayab.patrones.proxy" visibility="public" xPosition="145.0" yPosition="415.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="Read" returnType="String" visibility="public"/>
+        <Method name="Delete" returnType="String" visibility="public"/>
+        <Method name="Write" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ProxyFile" package="com.mayab.patrones.proxy" visibility="public" xPosition="566.0" yPosition="358.0">
+      <Fields>
+        <Field name="File" type="FileController" visibility="private"/>
+        <Field name="user" type="User" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="User" name="user"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getFile" returnType="FileController" visibility="public"/>
+        <Method name="setFile" returnType="void" visibility="public">
+          <Argument type="FileController" name="file"/>
+        </Method>
+        <Method name="Delete" returnType="String" visibility="public"/>
+        <Method name="Write" returnType="String" visibility="public"/>
+        <Method name="Read" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TestProxy" package="com.mayab.patrones.proxy" visibility="public" xPosition="570.0" yPosition="196.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="User" package="com.mayab.patrones.proxy" visibility="public" xPosition="844.0" yPosition="367.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="type" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="boolean" name="type"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getType" returnType="boolean" visibility="public"/>
+        <Method name="setType" returnType="void" visibility="public">
+          <Argument type="boolean" name="type"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="File" package="com.mayab.patrones.proxy" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Methods>
+        <Method name="Read" returnType="String" visibility="public"/>
+        <Method name="Delete" returnType="String" visibility="public"/>
+        <Method name="Write" returnType="String" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="user" source="com.mayab.patrones.proxy.ProxyFile" target="com.mayab.patrones.proxy.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="File" source="com.mayab.patrones.proxy.ProxyFile" target="com.mayab.patrones.proxy.FileController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mayab.patrones.proxy.ProxyFile" target="com.mayab.patrones.proxy.FileController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mayab.patrones.proxy.FileController" target="com.mayab.patrones.proxy.File"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mayab.patrones.proxy.ProxyFile" target="com.mayab.patrones.proxy.File"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

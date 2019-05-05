@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="com.mayab.patrones.adapter">
+  <ClassDiagramComponents>
+    <Class name="AdapterController" package="com.mayab.patrones.adapter" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="Adapter" returnType="void" visibility="package" isStatic="true">
+          <Argument type="OldPerson" name="old"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BabyBoomer" package="com.mayab.patrones.adapter" visibility="public" xPosition="930.0" yPosition="431.0">
+      <Fields>
+        <Field name="name" type="String" visibility="package"/>
+        <Field name="lastName" type="String" visibility="package"/>
+        <Field name="date" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="lastname"/>
+          <Argument type="String" name="date"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="name" returnType="String" visibility="public"/>
+        <Method name="lastName" returnType="String" visibility="public"/>
+        <Method name="Birthday" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Millenial" package="com.mayab.patrones.adapter" visibility="public" xPosition="163.0" yPosition="366.0">
+      <Fields>
+        <Field name="fullname" type="String" visibility="package"/>
+        <Field name="date" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="date"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="name" returnType="String" visibility="public"/>
+        <Method name="age" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NewPersonAdapter" package="com.mayab.patrones.adapter" visibility="public" xPosition="806.0" yPosition="164.0">
+      <Fields>
+        <Field name="newp" type="NewPerson" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="NewPerson" name="newp"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="name" returnType="String" visibility="public"/>
+        <Method name="lastName" returnType="String" visibility="public"/>
+        <Method name="Birthday" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="NewPerson" package="com.mayab.patrones.adapter" visibility="public" xPosition="504.0" yPosition="198.0">
+      <Methods>
+        <Method name="name" returnType="String" visibility="public"/>
+        <Method name="age" returnType="String" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="OldPerson" package="com.mayab.patrones.adapter" visibility="public" xPosition="1088.0" yPosition="35.0">
+      <Methods>
+        <Method name="name" returnType="String" visibility="public"/>
+        <Method name="lastName" returnType="String" visibility="public"/>
+        <Method name="Birthday" returnType="String" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="com.mayab.patrones.adapter.AdapterController" target="com.mayab.patrones.adapter.OldPerson" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mayab.patrones.adapter.BabyBoomer" target="com.mayab.patrones.adapter.OldPerson"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mayab.patrones.adapter.NewPersonAdapter" target="com.mayab.patrones.adapter.OldPerson"/>
+    <HasRelation name="newp" source="com.mayab.patrones.adapter.NewPersonAdapter" target="com.mayab.patrones.adapter.NewPerson" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mayab.patrones.adapter.Millenial" target="com.mayab.patrones.adapter.NewPerson"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="com.mayab.patrones.factoryMethod">
+  <ClassDiagramComponents>
+    <Class name="Equilatero" package="com.mayab.patrones.factoryMethod" visibility="public" xPosition="20.0" yPosition="221.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods>
+        <Method name="area" returnType="void" visibility="public"/>
+        <Method name="perimetro" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EquilateroCreator" package="com.mayab.patrones.factoryMethod" visibility="public" xPosition="267.0" yPosition="60.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="createTriangulo" returnType="Triangulo" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Escaleno" package="com.mayab.patrones.factoryMethod" visibility="public" xPosition="654.0" yPosition="41.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="area" returnType="void" visibility="public"/>
+        <Method name="perimetro" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EscalenoCreator" package="com.mayab.patrones.factoryMethod" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="createTriangulo" returnType="Triangulo" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FactoryMethodController" package="com.mayab.patrones.factoryMethod" visibility="public" xPosition="505.0" yPosition="644.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Isoceles" package="com.mayab.patrones.factoryMethod" visibility="public" xPosition="778.0" yPosition="606.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods>
+        <Method name="area" returnType="void" visibility="public"/>
+        <Method name="perimetro" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="IsocelesCreator" package="com.mayab.patrones.factoryMethod" visibility="public" xPosition="1069.0" yPosition="221.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="createTriangulo" returnType="Triangulo" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Triangulo" package="com.mayab.patrones.factoryMethod" visibility="public" isAbstract="true" xPosition="298.0" yPosition="323.0">
+      <Fields>
+        <Field name="ladoA" type="double" visibility="package"/>
+        <Field name="ladoB" type="double" visibility="package"/>
+        <Field name="ladoC" type="double" visibility="package"/>
+        <Field name="nombre" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="area" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="perimetro" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrianguloCreator" package="com.mayab.patrones.factoryMethod" visibility="public" isAbstract="true" xPosition="1034.0" yPosition="484.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="createTriangulo" returnType="Triangulo" visibility="public" isAbstract="true">
+          <Argument type="String" name="tipo"/>
+        </Method>
+        <Method name="Calcular" returnType="Triangulo" visibility="public">
+          <Argument type="String" name="tipo"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="com.mayab.patrones.factoryMethod.EquilateroCreator" target="com.mayab.patrones.factoryMethod.Triangulo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="com.mayab.patrones.factoryMethod.EquilateroCreator" target="com.mayab.patrones.factoryMethod.TrianguloCreator"/>
+    <IsRelation name="is" source="com.mayab.patrones.factoryMethod.Escaleno" target="com.mayab.patrones.factoryMethod.Triangulo"/>
+    <UseRelation source="com.mayab.patrones.factoryMethod.TrianguloCreator" target="com.mayab.patrones.factoryMethod.Triangulo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="com.mayab.patrones.factoryMethod.Equilatero" target="com.mayab.patrones.factoryMethod.Triangulo"/>
+    <IsRelation name="is" source="com.mayab.patrones.factoryMethod.Isoceles" target="com.mayab.patrones.factoryMethod.Triangulo"/>
+    <UseRelation source="com.mayab.patrones.factoryMethod.EscalenoCreator" target="com.mayab.patrones.factoryMethod.Triangulo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mayab.patrones.factoryMethod.IsocelesCreator" target="com.mayab.patrones.factoryMethod.Triangulo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="com.mayab.patrones.factoryMethod.EscalenoCreator" target="com.mayab.patrones.factoryMethod.TrianguloCreator"/>
+    <IsRelation name="is" source="com.mayab.patrones.factoryMethod.IsocelesCreator" target="com.mayab.patrones.factoryMethod.TrianguloCreator"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

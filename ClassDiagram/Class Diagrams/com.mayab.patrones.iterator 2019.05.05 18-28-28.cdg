@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="com.mayab.patrones.iterator">
+  <ClassDiagramComponents>
+    <Class name="civil" package="com.mayab.patrones.iterator" visibility="public" xPosition="727.0" yPosition="253.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="estudiante" type="Queue&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+        <Method name="getArrayList" returnType="Queue" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="industrial" package="com.mayab.patrones.iterator" visibility="public" xPosition="29.0" yPosition="234.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="estudiante" type="List&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+        <Method name="getArrayList" returnType="List" visibility="public"/>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="x"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Informatica" package="com.mayab.patrones.iterator" visibility="public" xPosition="246.0" yPosition="234.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="estudiante" type="ArrayList&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+        <Method name="getArrayList" returnType="ArrayList" visibility="public"/>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="x"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ListaFacultad" package="com.mayab.patrones.iterator" visibility="public" xPosition="558.0" yPosition="35.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="print" returnType="void" visibility="private" isStatic="true">
+          <Argument type="Iterator" name="i"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="mecatronica" package="com.mayab.patrones.iterator" visibility="public" xPosition="491.0" yPosition="253.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="estudiante" type="String[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+        <Method name="getArrayList" returnType="String[]" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Facultad" package="com.mayab.patrones.iterator" visibility="public" xPosition="261.0" yPosition="35.0">
+      <Methods>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mayab.patrones.iterator.Informatica" target="com.mayab.patrones.iterator.Facultad"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
